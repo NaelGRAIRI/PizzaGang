@@ -4,5 +4,11 @@
 Ce projet a été réalisé par GRAIRI Naël pour le cours de Programmation lors du semestre 5 du BUT Informatique.
 
 ## Comment installer le projet
-Après avoir cloner ou télécharger le projet, veuillez faire un {% filename %}npm install{% endfilename %} pour installer les dépendances, puis un {% filename %}ionic serve{% endfilename %} pour lancer le projet dans votre navigateur.
+Pour lancer ce projet, il faut que vous ayez Ionic et Angular d'installer sur votre poste.
+
+Il y a plusieurs étapes : 
+
+- Clonez ou téléchargez le projet.
+- Dans un nouveau terminal, mettez vous dans le dossier du projet
+- Tapez la commande {% filename %}command-line{% endfilename %} 
  
