@@ -1,42 +1,24 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Nouveau Pizza</ion-title>
+    <ion-title class="toolbar-title ion-text-center">New Pizza</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <ion-item>
-    <ion-input type="text" label="Affiche" [(ngModel)]="pizza.pictureLink"></ion-input>
+    <ion-input type="text" label="Picture" [(ngModel)]="pizza.pictureLink"></ion-input>
   </ion-item>
   <ion-item>
-    <ion-input type="text" label="Titre" [(ngModel)]="pizza.title"></ion-input>
+    <ion-input type="text" label="Name" [(ngModel)]="pizza.title"></ion-input>
   </ion-item>
   <ion-item>
-    <ion-input type="text" label="Pays" [(ngModel)]="pizza.country"></ion-input>
+    <ion-input type="text" label="Country" [(ngModel)]="pizza.country"></ion-input>
   </ion-item>
   <ion-item>
     <ion-input type="text" label="Date" [(ngModel)]="pizza.releaseDate"></ion-input>
   </ion-item>
   <ion-item>
-    <ion-input type="text" label="Réalisateur" [(ngModel)]="pizza.realisator"></ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-input type="text" label="Producteur" [(ngModel)]="pizza.productor"></ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-input type="text" label="Musique" [(ngModel)]="pizza.music"></ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-input type="text" label="Scénario" [(ngModel)]="pizza.scenario"></ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-input type="text" label="Durée" [(ngModel)]="pizza.time"></ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-toggle label="Au cinéma" [(ngModel)]="pizza.onAir"></ion-toggle>
-  </ion-item>
-  <ion-item>
-    <ion-textarea label="Synopsis" rows="20" [(ngModel)]="pizza.synopsis"></ion-textarea>
+    <ion-textarea label="Feelings" rows="20" [(ngModel)]="pizza.feelings"></ion-textarea>
   </ion-item>
   <p class="text-center">
     <ion-button (click)="add()">Envoyer</ion-button>

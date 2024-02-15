@@ -7,15 +7,10 @@
   </ion-toolbar>
 </ion-header>
 <ion-content>
-  <ion-button (click)="setModif()">Rendre Modifiable</ion-button>
+  <ion-button (click)="setModif()">Modify</ion-button>
   <div *ngIf="!modif">
     <ion-grid *ngIf="pizza">
       <ion-row>
-        <ion-col>
-          <strong>Au cinéma :</strong>
-          <ion-icon *ngIf="pizza.onAir" name="checkmark"></ion-icon>
-          <ion-icon *ngIf="!pizza.onAir" name="close-circle"></ion-icon>
-        </ion-col>
         <ion-col>
           <ion-button (click)="onDelete(pizza.id)">
             <ion-icon name="trash"></ion-icon>
@@ -27,35 +22,23 @@
           <img [src]="pizza.pictureLink" [alt]="pizza.title">
         </ion-col>
         <ion-col>
-          <strong>Title</strong><br>
+          <strong>Name</strong><br>
           {{pizza.title}} <br>
           <strong>Date</strong><br>
           {{pizza.releaseDate}} <br>
-          <strong>Réalisateur</strong><br>
-          {{pizza.realisator}} <br>
-          <strong>Producteur</strong><br>
-          {{pizza.productor}} <br>
-          <strong>Musique</strong><br>
-          {{pizza.music}} <br>
-          <strong>Scénario</strong> <br>
-          {{pizza.scenario}}  <br>
         </ion-col>
       </ion-row>
       <ion-row>
         <ion-col>
-          <strong>Pays</strong><br>
+          <strong>Country</strong><br>
           {{pizza.country}} <br>
         </ion-col>
-        <ion-col>
-          <strong>Durée</strong> <br>
-          {{pizza.time}}
-        </ion-col>
       </ion-row>
       <ion-row>
         <ion-col>
-          <strong>Résumé</strong> <br>
+          <strong>Feelings</strong> <br>
           <p>
-            {{pizza.synopsis}}
+            {{pizza.feelings}}
           </p>
         </ion-col>
       </ion-row>
@@ -63,40 +46,22 @@
   </div>
   <div *ngIf="modif">
     <ion-item>
-      <ion-input type="text" label="Affiche" [(ngModel)]="pizza.pictureLink"></ion-input>
+      <ion-input type="text" label="Picture" [(ngModel)]="pizza.pictureLink"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-input type="text" label="Titre" [(ngModel)]="pizza.title"></ion-input>
+      <ion-input type="text" label="Name" [(ngModel)]="pizza.title"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-input type="text" label="Pays" [(ngModel)]="pizza.country"></ion-input>
+      <ion-input type="text" label="Country" [(ngModel)]="pizza.country"></ion-input>
     </ion-item>
     <ion-item>
       <ion-input type="text" label="Date" [(ngModel)]="pizza.releaseDate"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-input type="text" label="Réalisateur" [(ngModel)]="pizza.realisator"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-input type="text" label="Producteur" [(ngModel)]="pizza.productor"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-input type="text" label="Musique" [(ngModel)]="pizza.music"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-input type="text" label="Scénario" [(ngModel)]="pizza.scenario"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-input type="text" label="Durée" [(ngModel)]="pizza.time"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-toggle label="Au cinéma" [(ngModel)]="pizza.onAir"></ion-toggle>
-    </ion-item>
-    <ion-item>
-      <ion-textarea label="Synopsis" rows="20" [(ngModel)]="pizza.synopsis"></ion-textarea>
+      <ion-textarea label="Feelings" rows="20" [(ngModel)]="pizza.feelings"></ion-textarea>
     </ion-item>
     <p class="text-center">
-      <ion-button (click)="onModif()">Modifier</ion-button>
+      <ion-button (click)="onModif()">Confirm</ion-button>
     </p>
   </div>
 </ion-content>
