@@ -1,30 +1,30 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AlertController, ToastController } from '@ionic/angular';
-import { FilmService } from 'src/app/film.service';
-import { Film } from 'src/app/models/film.model';
+import { PizzaService } from 'src/app/pizza.service';
+import { Pizza } from 'src/app/models/pizza.model';
 
 @Component({
-  selector: 'app-film',
-  templateUrl: './film.page.html',
-  styleUrls: ['./film.page.scss'],
+  selector: 'app-pizza',
+  templateUrl: './pizza.page.html',
+  styleUrls: ['./pizza.page.scss'],
 })
-export class FilmPage implements OnInit {
+export class PizzaPage implements OnInit {
   modif: boolean = false;
-  film!: Film;
+  pizza!: Pizza;
 
   constructor(
     private alertCtrl : AlertController,
     private route: ActivatedRoute,
-    private Film: FilmService,
+    private Pizza: PizzaService,
     private toastCtrl: ToastController,
     private router: Router
   ) { }
 
   ngOnInit() {
     const id = this.route.snapshot.paramMap.get('id');
-    this.Film.get(id).subscribe((value: any) => {
-      this.film = value;
+    this.Pizza.get(id).subscribe((value: any) => {
+      this.pizza = value;
     });
   }
 
@@ -58,14 +58,14 @@ export class FilmPage implements OnInit {
   }
 
   onModif() {
-    this.Film.update(this.film).subscribe(() => {
+    this.Pizza.update(this.pizza).subscribe(() => {
       this.presentToast();
       this.modif = false;
     });
   }
 
   onDelete(id: any) {
-    this.Film.delete(id);
-    this.router.navigate(['/films']);
+    this.Pizza.delete(id);
+    this.router.navigate(['/pizzas']);
   }
 }

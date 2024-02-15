@@ -1,24 +1,24 @@
 import { Injectable } from '@angular/core';
 import { Observable, map } from 'rxjs';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/compat/firestore';
-import { Film } from './models/film.model';
+import { Pizza } from './models/pizza.model';
 
 @Injectable({
   providedIn: 'root'
 })
-export class FilmService {
-  private dbPath = '/films';
-  filmsRef: AngularFirestoreCollection<Film>;
+export class PizzaService {
+  private dbPath = '/pizzas';
+  pizzasRef: AngularFirestoreCollection<Pizza>;
 
 
   constructor(
     private db: AngularFirestore
   ) { 
-    this.filmsRef = db.collection(this.dbPath);
+    this.pizzasRef = db.collection(this.dbPath);
   }
 
   getAll() : any {
-    return this.filmsRef.snapshotChanges().pipe(
+    return this.pizzasRef.snapshotChanges().pipe(
       map((changes: any) => {
         return changes.map((doc:any) => {
           return ({id: doc.payload.doc.id, ...doc.payload.doc.data()})
@@ -27,9 +27,9 @@ export class FilmService {
     );
   }
 
-  saveNewFilm(film: Film) : any {
+  saveNewPizza(pizza: Pizza) : any {
     return new Observable(obs => {
-      this.filmsRef.add({...film}).then(() => {
+      this.pizzasRef.add({...pizza}).then(() => {
         obs.next();
       });
     });
@@ -37,20 +37,20 @@ export class FilmService {
 
   get(id: any):any {
     return  new Observable(obs => {
-      this.filmsRef.doc(id).get().subscribe(res => {
+      this.pizzasRef.doc(id).get().subscribe(res => {
         obs.next({id: res.id, ...res.data()});
       });
     });
   }
 
-  update(film:Film) {
+  update(pizza:Pizza) {
     return new Observable(obs => {
-      this.filmsRef.doc(film.id).update(film);
+      this.pizzasRef.doc(pizza.id).update(pizza);
       obs.next();
     });
   }
 
   delete(id: any) {
-    this.db.doc(`films/${id}`).delete();
+    this.db.doc(`pizzas/${id}`).delete();
   }
 }

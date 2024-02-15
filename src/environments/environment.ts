@@ -5,14 +5,12 @@
 export const environment = {
   production: false,
   firebase: {
-    projectId: 'films-2f0bc',
-    appId: '1:484816020469:web:b810508c4ea7c4aba1b6bc',
-    databaseURL: 'https://films-2f0bc-default-rtdb.firebaseio.com',
-    storageBucket: 'films-2f0bc.appspot.com',
-    locationId: 'europe-west',
-    apiKey: 'AIzaSyBvVaCQW19mHbJRd0CdbGLtIKUajnwuZaw',
-    authDomain: 'films-2f0bc.firebaseapp.com',
-    messagingSenderId: '484816020469',
+    apiKey: "AIzaSyDAjEZvDwr4W-HRrNBafaZAB67fvXGYHgM",
+    authDomain: "gangpizza-30a21.firebaseapp.com",
+    projectId: "gangpizza-30a21",
+    storageBucket: "gangpizza-30a21.appspot.com",
+    messagingSenderId: "169172347041",
+    appId: "1:169172347041:web:36f85d359790b7dd5ba8e0"
   },
 };
 

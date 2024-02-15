@@ -1,4 +1,4 @@
-export class Film {
+export class Pizza {
     id?: string;
     country: string;
     music: string;
