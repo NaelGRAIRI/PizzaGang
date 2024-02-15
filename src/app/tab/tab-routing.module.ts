@@ -19,9 +19,6 @@ const routes: Routes = [
         path: 'pizzas',
         loadChildren: () => import('../pizzas-list/pizzas-list.module').then(m=>m.PizzasListPageModule)
       }, {
-        path: 'about',
-        loadChildren: () => import('../about/about.module').then(m=>m.AboutPageModule)
-      }, {
         path: 'photos',
         loadChildren: () => import('../photos/photos.module').then(m=>m.PhotosPageModule)
       }
