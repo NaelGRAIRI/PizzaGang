@@ -25,3 +25,24 @@
 #container a {
   text-decoration: none;
 }
+
+.toolbar-title {
+  font-size: 36px; /* Taille de la police plus grande */
+  color: #ffc0cb; /* Couleur rose */
+  font-family: 'Graffiti', sans-serif; /* Utilisation de la police Graffiti ou d'une police similaire */
+}
+
+.image-container {
+  position: relative;
+}
+
+.text-overlay {
+  position: absolute;
+  bottom: 20px; /* Ajustez la position verticale du texte selon vos besoins */
+  left: 20px; /* Ajustez la position horizontale du texte selon vos besoins */
+  background-color: rgba(0, 0, 0, 0.5); /* Arrière-plan semi-transparent */
+  padding: 10px; /* Espace intérieur autour du texte */
+  color: white; /* Couleur du texte */
+}
+
+
